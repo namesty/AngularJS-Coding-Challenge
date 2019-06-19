@@ -8,24 +8,16 @@ angular.module('myApp.trip-form', [
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/trip-form', {
     templateUrl: 'trip-form/trip-form.html',
-    controller: 'TripformCtrl'
+    controller: 'TripformCtrl',
+    css: 'trip-form/trip-form.css'
   });
 }])
 
-.controller('TripformCtrl', ['$scope', 'reservationService', function($scope, reservationService) {
-
+.controller('TripformCtrl', ['$scope', 'reservationService', '$location', function($scope, reservationService, $location) {
+  $scope.reservation = reservationService.get();
+  
   $scope.findReservation = ()=>{
-
-    $scope.reservation = {
-      number: $scope.number,
-      lastName: $scope.lastName,
-      ship: $scope.ship,
-      sailDate: `${$scope.month}-${$scope.day}-${$scope.year}`,
-      remember: $scope.remember
-    }
-
     reservationService.add($scope.reservation)
-
-    console.log(reservationService.get())
+    $location.path("/trip-view")
   }
 }]);

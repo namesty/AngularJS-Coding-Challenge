@@ -1,4 +1,4 @@
-let ReservationService = angular.module('ReservationService',[])
+angular.module('ReservationService',[])
 .service('reservationService', function(){
     let reservation;
     this.add = (inReservation)=>{
@@ -6,5 +6,8 @@ let ReservationService = angular.module('ReservationService',[])
     };
     this.get = ()=>{
         return reservation;
+    }
+    this.delete = ()=>{
+        reservation = null;
     }
 })

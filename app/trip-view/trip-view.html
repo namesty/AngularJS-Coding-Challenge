@@ -1,2 +1,40 @@
-<p>This is the partial for view 2.</p>
-
+<div class="container" ng-controller="TripviewCtrl">
+      <div class="row">
+          <div class="col-md-6">
+            <label>Reservation number</label>
+            <label>{{reservation.number}}</label>
+          </div>
+          <div class="col-md-6">
+            <label>Last Name on Reservation</label>
+            <label>{{reservation.lastName}}</label>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+              <label>Ship</label>
+              <label>{{reservation.ship}}</label>
+          </div>
+          <div class="col-md-6">
+              <label>Sail date</label>
+              <div class="row">
+                  <div class="col-md-4">
+                    <label>Month</label>
+                    <label>{{reservation.month}}</label>
+                  </div>
+                  <div class="col-md-4">
+                    <label>Day</label>
+                    <label>{{reservation.day}}</label>
+                  </div>
+                  <div class="col-md-4">
+                    <label>Year</label>
+                    <label>{{reservation.year}}</label>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+              <button type="button" class="btn btn-primary" ng-click="editReservation()">Primary</button>
+          </div>
+      </div>
+</div>

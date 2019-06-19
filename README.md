@@ -89,14 +89,14 @@ app/                  --> all of the source files for the application
       version-directive_test.js  --> version directive tests
       interpolate-filter.js      --> custom interpolation filter
       interpolate-filter_test.js --> interpolate filter tests
-  view1/                --> the view1 view template and logic
-    view1.html            --> the partial template
-    view1.js              --> the controller logic
-    view1_test.js         --> tests of the controller
-  view2/                --> the view2 view template and logic
-    view2.html            --> the partial template
-    view2.js              --> the controller logic
-    view2_test.js         --> tests of the controller
+  trip-form/                --> the trip-form view template and logic
+    trip-form.html            --> the partial template
+    trip-form.js              --> the controller logic
+    trip-form_test.js         --> tests of the controller
+  trip-view/                --> the trip-view view template and logic
+    trip-view.html            --> the partial template
+    trip-view.js              --> the controller logic
+    trip-view_test.js         --> tests of the controller
   app.js                --> main application module
   index.html            --> app layout file (the main html template file of the app)
   index-async.html      --> just like index.html, but loads js files asynchronously
@@ -120,7 +120,7 @@ which we run with the [Karma][karma] test runner. We provide a Karma configurati
 
 * The configuration is found at `karma.conf.js`.
 * The unit tests are found next to the code they are testing and have a `.spec.js` suffix (e.g.
-  `view1.spec.js`).
+  `trip-form.spec.js`).
 
 The easiest way to run the unit tests is to use the supplied npm script:
 

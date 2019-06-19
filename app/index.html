@@ -14,6 +14,10 @@
   <link rel="stylesheet" href="app.css">
   <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+  type="text/javascript" charset="utf-8"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+  type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
   <ul class="menu">
@@ -21,13 +25,11 @@
     <li><a href="#!/trip-view">trip-view</a></li>
   </ul>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+  <div class="container">
+    <img src="./assets/main-banner.png" class="img-responsive" alt="Responsive image">
+  </div>
 
   <div ng-view></div>
-
-  <div>AngularJS seed app: v<span app-version></span></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>

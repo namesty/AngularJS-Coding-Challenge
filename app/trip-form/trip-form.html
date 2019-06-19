@@ -1,74 +1,81 @@
 <div class="container" ng-controller="TripformCtrl">
+    <div class="row form-header">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <h2>Enter Your Trip Information</h2>
+        </div>
+    </div>
     <form ng-submit="findReservation()">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputtext1" placeholder="Reservation Number" ng-model="reservation.number">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputtext1" placeholder="Last Name on Reservation" ng-model="reservation.lastName">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <label>Ship</label>
-                <select class="form-control" ng-model="reservation.ship">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="col-md-6">
-                <label>Sail date</label>
-                <div class="row">
-                    <div class="col-md-4">
-                        <select class="form-control" ng-model="reservation.month">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+        <div class="form-container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="exampleInputtext1" placeholder="Reservation Number" ng-model="reservation.number">
                     </div>
-                    <div class="col-md-4">
-                        <select class="form-control" ng-model="reservation.day">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <select class="form-control" ng-model="reservation.year">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputtext1" placeholder="Last Name on Reservation" ng-model="reservation.lastName">
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <label>Destination Address:</label>
-            <div class="col-md-12">
-                <textarea class="form-control" rows="2" ng-model="reservation.address"></textarea>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Ship</label>
+                    <select class="form-control" ng-model="reservation.ship">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label>Sail date</label>
+                    <div class="row date-row">
+                        <div class="col-md-4">
+                            <select class="form-control" ng-model="reservation.month">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" ng-model="reservation.day">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" ng-model="reservation.year">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4" align="center">
-                <label class="full-width text-center">
-                    <input type="checkbox" ng-model="reservation.remember"> Remember my information
-                </label>
-                <button type="submit" class="btn btn-primary text-center">Find Reservation</button>
+            <div class="row">
+                <div class="col-md-12 destination-row">
+                    <label>Destination Address:</label>
+                    <textarea class="form-control" rows="2" ng-model="reservation.address"></textarea>
+                </div>
             </div>
-        </div>
+            <div class="row button-row">
+                <div class="col-md-4 col-md-offset-4" align="center">
+                    <label class="full-width text-center">
+                        <input type="checkbox" ng-model="reservation.remember"> Remember my information
+                    </label>
+                    <button type="submit" class="btn btn-primary text-center submit-button">Find Reservation</button>
+                </div>
+            </div>
+        </div>    
     </form>
 </div>

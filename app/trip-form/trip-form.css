@@ -4,3 +4,24 @@
 .text-center{
     text-align: center;
 }
+.form-container{
+    margin: 0 100px;
+}
+.row{
+    margin-top: 15px;
+}
+.form-header{
+    margin: 45px;
+}
+.button-row{
+    margin-top: 25px;
+}
+.submit-button{
+    margin-top: 10px;
+}
+.date-row{
+    margin-top: 0;
+}
+.destination-row{
+    margin-top: 15px;
+}

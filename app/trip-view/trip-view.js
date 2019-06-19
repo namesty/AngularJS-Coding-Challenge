@@ -9,7 +9,8 @@ angular.module('myApp.trip-view', [
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/trip-view', {
     templateUrl: 'trip-view/trip-view.html',
-    controller: 'TripviewCtrl'
+    controller: 'TripviewCtrl',
+    css: 'trip-view/trip-view.css'
   });
 }])
 
@@ -18,12 +19,23 @@ angular.module('myApp.trip-view', [
 
   let response = (async ()=>{
     if($scope.reservation.address)
-    await mapsService.sendAddress($scope.reservation.address)
+    try{
+      $scope.loading = true;
+      await mapsService.calculateRoutes(document.getElementById("mapContainer"),$scope.reservation.address);
+    }catch(err){
+      console.log(err);
+    }finally{
+      $scope.loading = false;
+      console.log($scope.loading)
+    } 
   })();
-  console.log(response)
+ 
 
   $scope.editReservation = ()=>{
     if(!$scope.reservation.remember) reservationService.delete();
     $location.path('/trip-form');
   }
+
+
+
 }]);

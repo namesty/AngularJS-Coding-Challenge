@@ -13,6 +13,11 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   $routeProvider.otherwise({redirectTo: '/trip-form'});
 }]);
 
+/**
+ * Custom directive to include custom css files in custom modules
+ * @author namesty
+ */
+
 app.directive('head', ['$rootScope','$compile',
     function($rootScope, $compile){
         return {

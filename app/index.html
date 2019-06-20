@@ -2,7 +2,10 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js">
+<!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,16 +17,11 @@
   <link rel="stylesheet" href="app.css">
   <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
   <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
-  type="text/javascript" charset="utf-8"></script>
-  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
-  type="text/javascript" charset="utf-8"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
 </head>
+
 <body>
-  <ul class="menu">
-    <li><a href="#!/trip-form">trip-form</a></li>
-    <li><a href="#!/trip-view">trip-view</a></li>
-  </ul>
 
   <div class="container">
     <img src="./assets/main-banner.png" class="img-responsive" alt="Responsive image">
@@ -41,9 +39,12 @@
   <script src="trip-view/trip-view.js"></script>
   <script src="services/reservationService.js"></script>
   <script src="services/mapsService.js"></script>
+  <script src="services/dateService.js"></script>
   <script src="core/version/version.js"></script>
+  <script src="components/here-map/here-map.js"></script>
   <script src="core/version/version-directive.js"></script>
   <script src="core/version/interpolate-filter.js"></script>
   <script src="lib/jquery/dist/jquery.js"></script>
 </body>
+
 </html>

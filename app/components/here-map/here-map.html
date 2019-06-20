@@ -1,0 +1,21 @@
+<div ng-show="show">
+    <h3>Route and weather information</h3>
+    <h4 ng-show="loading">Loading map information, please wait...</h4>
+    <div style="height: 450px" id="mapContainer"></div>
+    <div>
+        <h4>Temperature in {{city}}: {{temp}} </h4>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" value="celsius" checked ng-model="tempUnit" ng-change="changeTempUnit()"> Celsius
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" value="farenheit" ng-model="tempUnit" ng-change="changeTempUnit()"> Farenheit
+            </label>
+        </div>
+    </div>
+</div>
+<div ng-show="!show">
+    <h4>No Map Information Available</h4>
+</div>

@@ -1,49 +1,52 @@
-<div class="container" ng-controller="TripviewCtrl">
-        <div class="row form-header">
-            <div class="col-md-6 col-md-offset-3 text-center">
-                <h2>Enter Your Trip Information</h2>
+<div class="container">
+    <div class="row form-header">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <h2>Enter Your Trip Information</h2>
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="title-label">Reservation number</label>
+                <label class="data-label">{{reservation.number}}</label>
+            </div>
+            <div class="col-md-6">
+                <label class="title-label">Last Name on Reservation</label>
+                <label class="data-label">{{reservation.lastName}}</label>
             </div>
         </div>
-        <div class="form-container">
-            <div class="row">
-                <div class="col-md-6">
-                    <label class="title-label">Reservation number</label>
-                    <label class="data-label">{{reservation.number}}</label>
-                </div>
-                <div class="col-md-6">
-                    <label class="title-label">Last Name on Reservation</label>
-                    <label class="data-label">{{reservation.lastName}}</label>
-                </div>
+        <div class="row second-row">
+            <div class="col-md-6">
+                <label>Ship</label>
+                <label class="data-label">{{reservation.ship}}</label>
             </div>
-            <div class="row second-row">
-                <div class="col-md-6">
-                    <label>Ship</label>
-                    <label class="data-label">{{reservation.ship}}</label>
-                </div>
-                <div class="col-md-6">
-                    <label>Sail date</label>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label class="title-label">Month</label>
-                            <label class="data-label">{{reservation.month}}</label>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="title-label">Day</label>
-                            <label class="data-label">{{reservation.day}}</label>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="title-label">Year</label>
-                            <label class="data-label">{{reservation.year}}</label>
-                        </div>
+            <div class="col-md-6">
+                <label>Sail date</label>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="title-label">Month</label>
+                        <label class="data-label">{{reservation.month}}</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="title-label">Day</label>
+                        <label class="data-label">{{reservation.day}}</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="title-label">Year</label>
+                        <label class="data-label">{{reservation.year}}</label>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4 text-center button-row">
-                    <button type="button" class="btn btn-primary" ng-click="editReservation()">Edit Reservation</button>
-                </div>
+        </div>
+        <div class="row map-row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <here-map search-address="reservation.address"></here-map>
             </div>
         </div>
-        <div class="lds-ring" ng-if="loading"><div></div><div></div><div></div><div></div></div>
-        <div style="width: 640px; height: 480px" id="mapContainer"></div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center button-row">
+                <button type="button" class="btn btn-primary" ng-click="editReservation()" ng-disabled="tripForm.$invalid">Edit Reservation</button>
+            </div>
+        </div>
+    </div>
 </div>

@@ -4,59 +4,41 @@
             <h2>Enter Your Trip Information</h2>
         </div>
     </div>
-    <form ng-submit="findReservation()">
+    <form name="tripForm" ng-submit="findReservation(tripForm.$valid)" novalidate>
         <div class="form-container">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="number" class="form-control" id="exampleInputtext1" placeholder="Reservation Number" ng-model="reservation.number">
+                    <div class="form-group" ng-class="{ 'has-error' : tripForm.number.$invalid && !tripForm.number.$pristine }">
+                        <input type="number" name="number" class="form-control" id="exampleInputtext1" placeholder="Reservation Number" ng-model="reservation.number"
+                            ng-required="true">
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="exampleInputtext1" placeholder="Last Name on Reservation" ng-model="reservation.lastName">
+                    <div class="form-group" ng-class="{ 'has-error' : tripForm.lastName.$invalid && !tripForm.lastName.$pristine }">
+                        <input type="text" name="lastName" class="form-control" id="exampleInputtext1" placeholder="Last Name on Reservation" ng-model="reservation.lastName"
+                            ng-required="true">
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <label>Ship</label>
-                    <select class="form-control" ng-model="reservation.ship">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
+                    <select class="form-control" ng-model="reservation.ship" ng-required="true" ng-options="ship for ship in ships"></select>
                 </div>
                 <div class="col-md-6">
                     <label>Sail date</label>
                     <div class="row date-row">
                         <div class="col-md-4">
-                            <select class="form-control" ng-model="reservation.month">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                            <select class="form-control" ng-model="reservation.month" ng-required="true" ng-options="month for month in dates.months"
+                                ng-change="changeDays()">
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <select class="form-control" ng-model="reservation.day">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                            <select class="form-control" ng-model="reservation.day" ng-required="true" ng-options="day for day in dates.days" ng-change="changeDays()">
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <select class="form-control" ng-model="reservation.year">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                            <select class="form-control" ng-model="reservation.year" ng-required="true" ng-options="year for year in dates.years" ng-change="changeDays()">
                             </select>
                         </div>
                     </div>
@@ -64,8 +46,10 @@
             </div>
             <div class="row">
                 <div class="col-md-12 destination-row">
-                    <label>Destination Address:</label>
-                    <textarea class="form-control" rows="2" ng-model="reservation.address"></textarea>
+                    <div class="form-group" ng-class="{ 'has-error' : tripForm.address.$invalid && !tripForm.address.$pristine }">
+                        <label>Destination Address:</label>
+                        <textarea name="address" class="form-control" rows="2" ng-model="reservation.address" ng-required="true"></textarea>
+                    </div>
                 </div>
             </div>
             <div class="row button-row">
@@ -73,9 +57,9 @@
                     <label class="full-width text-center">
                         <input type="checkbox" ng-model="reservation.remember"> Remember my information
                     </label>
-                    <button type="submit" class="btn btn-primary text-center submit-button">Find Reservation</button>
+                    <button type="submit" class="btn btn-primary text-center submit-button" ng-disabled="tripForm.$invalid">Find Reservation</button>
                 </div>
             </div>
-        </div>    
+        </div>
     </form>
 </div>

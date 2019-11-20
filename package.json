@@ -5,7 +5,7 @@
   "description": "A coding challenge for Nybble Group. By Nestor Amesty",
   "license": "MIT",
   "dependencies": {
-    "angular": "^1.7.5",
+    "angular": "^1.7.9",
     "angular-loader": "^1.7.5",
     "angular-route": "^1.7.5",
     "bootstrap": "^3.3.6",
